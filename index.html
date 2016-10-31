@@ -1,4 +1,6 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
     <head>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,30 +11,40 @@
         <link href="css/my-style.css" type="text/css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        
+
         <!-- 1. Load libraries -->
          <!-- Polyfill(s) for older browsers -->
         <script src="node_modules/core-js/client/shim.min.js"></script>
         <script src="node_modules/zone.js/dist/zone.js"></script>
         <script src="node_modules/reflect-metadata/Reflect.js"></script>
         <script src="node_modules/systemjs/dist/system.src.js"></script>
-        
         <!-- 2. Configure SystemJS -->
         <script src="systemjs.config.js"></script>
         <script>
           System.import('app').catch(function(err){ console.error(err); });
         </script>
-  
+    
     </head>
-  
-    <!-- 3. Display the application -->
-    <body>        
-        <my-app>Loading...</my-app>
+
+    <body>
+        <div class="row height-full">
+
+            <div class="col s2 height-full grid-block-left red accent-2"></div>
+            
+            <div class="col s8 height-full grid-block-middle grey lighten-3" style="padding: 0px">
+                <my-app>Loading...</my-app>
+            </div>
+
+            <div class="col s2 height-full grid-block-right green accent-2"></div>
+
+        </div>
+
 
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
+
     </body>
 
 </html>
