@@ -1,31 +1,48 @@
-<div class="row">
-    <div class="col s6" *ngFor="let domain of domains">
-        <div class="card">
-            
-            <!--
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator image" src="images/gmail.jpg">
-            </div>
-            -->
-            
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">{{domain.name}}<i class="material-icons right">more_vert</i></span>
-                <p><a href="#">Edit Credentials</a></p>
-            </div>
+<div class="row height-full">
 
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Credentials<i class="material-icons right">close</i></span>
-                <table>
-                    <tr>
-                        <td>UserId: </td>
-                        <td>{{domain.userName}}</td>
-                    </tr>
-                    <tr>
-                        <td>Password: </td>
-                        <td>{{domain.password}}</td>
-                    </tr>
-                </table>
+    <!-- Left Component -->
+    <div class="col s2 height-full grid-block-left red accent-2"></div>
+
+
+    <!-- Middle Component -->
+    <div class="col s8 height-full grid-block-middle grey lighten-3" style="padding: 0px">
+
+        <div class="row">
+            <div class="col s6" *ngFor="let domain of domains">
+                <div class="card">
+                    
+                    <!--
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator image" src="images/gmail.jpg">
+                    </div>
+                    -->
+                    
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{domain.name}}<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">Edit Credentials</a></p>
+                    </div>
+
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Credentials<i class="material-icons right">close</i></span>
+                        <table>
+                            <tr>
+                                <td>UserId: </td>
+                                <td>{{domain.userName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Password: </td>
+                                <td>{{domain.password}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
+
+
+    <!-- Right Component -->
+    <div class="col s2 height-full grid-block-right green accent-2"></div>
+
 </div>

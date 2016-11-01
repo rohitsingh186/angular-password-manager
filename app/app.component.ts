@@ -7,8 +7,7 @@ import { DomainService } from './domain.service';
 @Component({
 	moduleId: module.id,
   	selector: 'my-app',
-  	templateUrl: 'card.component.html',
-  	providers: [DomainService]
+  	templateUrl: 'card.component.html'
 })
 
 
