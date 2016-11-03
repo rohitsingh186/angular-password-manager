@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Jsonp } from '@angular/http';
+import {Observable} from 'rxjs/Rx';
 
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 import { Domain } from './domain';
 
@@ -9,16 +11,18 @@ import { Domain } from './domain';
 @Injectable()
 export class DomainService {
 	
-	private domainsUrl = 'app/domains';
-	// private domainsUrl = 'http://localhost:8080/DomainServiceApi/rest/domains';
+	// private domainsUrl = 'app/domains';
+	private domainsUrl = 'http://localhost:8080/DomainServiceApi/rest/domains?callback=JSONP_CALLBACK';
 
-	constructor(private http: Http) {}
+	constructor(private jsonp: Jsonp) {}
 	
-	getDomains(): Promise<Domain[]> {
-		return this.http.get(this.domainsUrl)
+	getDomains(): void {
+
+		this.jsonp.get('http://localhost:8080/DomainServiceApi/rest/domains?callback=JSONP_CALLBACK')
 			.toPromise()
-			.then(response => response.json().data as Domain[])
+			.then(response => console.log("Result is: " + response))
 			.catch(this.handleError);
+
 	}
 
 	private handleError(error: any): Promise<any> {

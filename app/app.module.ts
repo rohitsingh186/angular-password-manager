@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 // Imports for loading and configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -11,11 +11,11 @@ import { DomainService } from './domain.service';
 
 
 
-
 @NgModule({
 	imports: [ 
 		BrowserModule,
 		HttpModule,
+		JsonpModule,
 		InMemoryWebApiModule.forRoot(InMemoryDataService)
 	],
 	declarations: [ AppComponent ],
