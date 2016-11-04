@@ -8,6 +8,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent }   from './app.component';
 import { DomainService } from './domain.service';
+import { HttpService } from './http.service';
 
 
 
@@ -20,7 +21,7 @@ import { DomainService } from './domain.service';
 	],
 	declarations: [ AppComponent ],
 	bootstrap:    [ AppComponent ],
-  	providers: [DomainService]
+  	providers: [DomainService, HttpService]
 })
 
 
