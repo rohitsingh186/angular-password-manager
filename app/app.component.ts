@@ -19,7 +19,13 @@ export class AppComponent implements OnInit {
 	domains: Domain[];
 
 	getDomains(): void {
-		this.domainService.getDomains();		
+		this.domainService.getDomains()
+			.subscribe(
+				data => {
+					this.domains = <Domain[]>data.domain;
+				},
+				error => console.log(error)
+			)
 	}
 
 	ngOnInit(): void {
