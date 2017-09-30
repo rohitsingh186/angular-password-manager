@@ -14,7 +14,7 @@ import { HttpRequestType } from './http.request.type';
 export class DomainService {
 	
 	// private domainsUrl = 'app/domains';
-	private domainsUrl = 'http://localhost:8081/domains';
+	private domainsUrl = 'http://172.17.0.2:8081/domains';
 
 	constructor(private httpService: HttpService) {
   	}
@@ -24,7 +24,7 @@ export class DomainService {
 	getDomains(): void {
 
 		let headers:Headers = new Headers ({});
-		console.log(this.httpService.executeRequest('http://localhost:8081/domains', HttpRequestType.GET, headers));
+		console.log(this.httpService.executeRequest('http://172.17.0.2:8081/domains', HttpRequestType.GET, headers));
 
 	}
 
