@@ -1,3 +1,6 @@
-app/*.js
-app/*.map
+**.js
+**js.map
 node_modules/
+**.iml
+.idea/
+**/env.json

@@ -20,12 +20,12 @@ export class AppComponent implements OnInit {
 
 	getDomains(): void {
 		this.domainService.getDomains()
-			.subscribe(
-				data => {
-					this.domains = <Domain[]>data;
-				},
-				error => console.log(error)
-			);
+			.then((data) => {
+				this.domains = <Domain[]>data;
+			})
+	  		.catch((error) => {
+	    		console.log(error);
+	  		});
 	}
 
 	ngOnInit(): void {
