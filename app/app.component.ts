@@ -7,7 +7,7 @@ import { DomainService } from './domain.service';
 @Component({
 	moduleId: module.id,
   	selector: 'my-app',
-  	templateUrl: 'card.component.html'
+  	templateUrl: 'app.component.html'
 })
 
 
@@ -22,10 +22,10 @@ export class AppComponent implements OnInit {
 		this.domainService.getDomains()
 			.subscribe(
 				data => {
-					this.domains = <Domain[]>data.domain;
+					this.domains = <Domain[]>data;
 				},
 				error => console.log(error)
-			)
+			);
 	}
 
 	ngOnInit(): void {

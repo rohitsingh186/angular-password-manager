@@ -13,7 +13,7 @@ import { Domain } from './domain';
 @Injectable()
 export class DomainService {
 	
-	private domainsUrl = 'http://localhost:8080/DomainServiceApi/rest/domains';
+	private domainsUrl = 'http://localhost:8081/domains';
 
 	constructor(private http: Http) {}
 	

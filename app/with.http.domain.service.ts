@@ -13,13 +13,13 @@ import { Domain } from './domain';
 export class DomainService {
     
     // private domainsUrl = 'app/domains';
-    private domainsUrl = 'http://localhost:8080/DomainServiceApi/rest/domains?callback=JSONP_CALLBACK';
+    private domainsUrl = 'http://localhost:8081/domains';
 
     constructor(private jsonp: Jsonp) {}
     
     getDomains(): void {
 
-        this.jsonp.get('http://localhost:8080/DomainServiceApi/rest/domains?callback=JSONP_CALLBACK')
+        this.jsonp.get('http://localhost:8081/domains')
             .toPromise()
             .then(response => console.log("Result: " + response),
                 err => console.log("Reject: " + err));
@@ -68,13 +68,13 @@ import { Domain } from './domain';
 export class DomainService {
     
     // private domainsUrl = 'app/domains';
-    private domainsUrl = 'http://localhost:8080/DomainServiceApi/rest/domains';
+    private domainsUrl = 'http://localhost:8081/domains';
 
     constructor(private http: Http) {}
     
     getDomains(): void {
 
-        this.http.get('http://localhost:8080/DomainServiceApi/rest/domains')
+        this.http.get('http://localhost:8081/domains')
             .toPromise()
             .then(response => console.log("Success !"),
                 err => console.log("Error"))
