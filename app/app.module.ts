@@ -5,7 +5,6 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent }   from './app.component';
 import { DomainService } from './domain.service';
-import { HttpService } from './http.service';
 import { Config } from './config/config';
 
 
@@ -18,7 +17,7 @@ import { Config } from './config/config';
 	],
 	declarations: [ AppComponent ],
 	bootstrap:    [ AppComponent ],
-  	providers: [DomainService, HttpService, Config]
+  	providers: [DomainService, Config]
 })
 
 
