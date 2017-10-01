@@ -33,4 +33,26 @@ export class DomainService {
 		  		});
 		});
 	}
+
+	addDomain(body): Promise<any> {
+        return new Promise((resolve, reject)=> {
+            this.config.getEnv('baseUrl')
+                .then((domainsIp) => {
+                    this.http
+                        .post('http://' + domainsIp + ':8081/domains', body)
+                        .toPromise()
+                        .then((data) => {
+                            resolve(data.json());
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            reject(error);
+                        });
+                })
+                .catch((error) => {
+                    console.log(error);
+                    reject(error);
+                });
+        });
+	}
 }
